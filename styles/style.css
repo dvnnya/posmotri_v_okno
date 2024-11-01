@@ -115,11 +115,8 @@ ol {
   cursor: text;
 }
 
-.search-form__textfield:focus-visible {
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
-  outline: 1px solid #fff;
-  outline-offset: 1px;
+.search-form__textfield:focus {
+  outline: none;
 }
 
 .search-form__textfield:active {
@@ -134,28 +131,39 @@ ol {
 
 .search-form__label {
   display: flex;
+  align-items: center;
   gap: 5px;
   cursor: pointer;
 }
 
-.search-form__pseudo-checkbox {
-  display: inline-block;
-  width: 19px;
-  height: 19px;
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: 1px;
+}
+
+.search-form__pseudo-checkbox {
+  width: 15px;
+  height: 15px;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox {
   background-color: #fff;
+
 }
 
 .search-form__checkbox:active + .search-form__pseudo-checkbox {
   background-color: #fff;
 }
 
-.search-form__label-text:hover {
-  border-bottom: 1px solid #fff;
+.search-form__label-text {
+  border-bottom: 1px solid transparent;
+}
+
+.search-form__label:hover > .search-form__label-text {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
 
 .button {
@@ -177,17 +185,21 @@ ol {
   width: 194px;
 }
 
-.search-form__submit-button:hover {
+.button:hover {
   text-decoration: underline;
-  text-decoration-skip-ink: none;
+  text-decoration-thickness: 1px;
 }
 
-.search-form__submit-button:active {
+.button:active {
   text-decoration: none;
   background-color: #545050;
 }
 
-.search-form__submit-button:focus-visible {
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
@@ -198,7 +210,7 @@ ol {
 }
 
 .title {
-  font-family: Oswald, sans-serif;;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
@@ -225,14 +237,26 @@ ol {
 .content__card-link {
   display: block;
   text-decoration: none;
+  margin: 2px;
 }
 
-.content__card-link:active {
+.content__card-link:focus {
+  outline: none;
+  border: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__card-link_current {
   background-color: #545050;
 }
 
 .content__video-card {
   display: flex;
+  justify-content: space-between;
 }
 
 .content__video-card-description-container {
@@ -247,7 +271,7 @@ ol {
   text-transform: uppercase;
   padding-bottom: 6px;
   color: #fff;
-  
+  padding-left: 2px;
 }
 
 .content__video-card-description {
@@ -256,10 +280,20 @@ ol {
   font-size: 18px;
   line-height: 90%;
   color: #fff;
+  padding-left: 2px;
+}
+
+.content__video-card:hover .content__video-card-title {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.content__video-card:hover .content__video-card-description {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
   height: 103px;
 }
 
