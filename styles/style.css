@@ -69,7 +69,6 @@ ol {
   position: relative;
   width: 711px;
   height: 386px;
-  padding-bottom: 16px;
 }
 
 .result__video {
@@ -80,7 +79,8 @@ ol {
 
 .search-form {
   display: flex;
-  justify-content: space-between;
+  padding-top: 16px;
+  gap: 40px;
 }
 
 .search-form__fieldset {
@@ -91,7 +91,7 @@ ol {
   font-size: 18px;
   font-weight: 400;
   color: #fff;
-  padding-bottom: 10px;
+  padding-bottom: 6px;
 }
 
 .search-form__textfield {
@@ -105,7 +105,7 @@ ol {
   font-size: 18px;
   color: rgb(255 255 255);
   width: 225px;
-  padding: 0;
+  padding-top: 1px;
 }
 
 .search-form__textfield:hover {
@@ -122,8 +122,11 @@ ol {
 }
 
 .search-form__checkbox-list {
-  display: flex;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 19px;
+  padding-bottom: 3px;
+  padding-left: 4px;
 }
 
 .search-form__label {
@@ -131,6 +134,7 @@ ol {
   align-items: center;
   gap: 5px;
   cursor: pointer;
+  padding-bottom: 2px;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -156,6 +160,7 @@ ol {
 
 .search-form__label-text {
   border-bottom: 1px solid transparent;
+  margin-right: -2px;
 }
 
 .search-form__label:hover > .search-form__label-text {
@@ -178,6 +183,7 @@ ol {
   align-self: end;
   text-align: center;
   width: 194px;
+  margin-left: 3px;
 }
 
 .button:hover {
